@@ -21,8 +21,8 @@ pipeline{
     stage('Checkmarx scan'){
       steps{
         script{
-          def pipeline = load 'pipeline.groovy'
-          pipeline.sast()
+          def cx = load 'pipeline.groovy'
+          cx.sast()
         }
       }
     }
