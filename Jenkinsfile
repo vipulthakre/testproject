@@ -7,6 +7,7 @@ pipeline{
     stage('Clone Appplication Source code'){
       steps{
         script{
+            cleanWs()
             git branch: 'main', credentialsId: 'gitcred', url: 'https://github.com/vipulthakre/testproject.git'
         }
       }
