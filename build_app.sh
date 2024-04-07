@@ -2,4 +2,4 @@
 
 cd /var/lib/jenkins/workspace/$1
 
-mvn clean package
+sudo mvn clean package
