@@ -38,7 +38,7 @@ pipeline{
       steps{
         script{
           def ufg = load 'pipeline.groovy'
-          ufg.uploadArtifactInJfrog()
+          ufg.Jfrog()
         }
       }
     }
