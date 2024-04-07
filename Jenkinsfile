@@ -7,7 +7,6 @@ pipeline{
     stage('Clone Appplication Source code'){
       steps{
         script{
-            cleanWs()
             git branch: 'main', credentialsId: 'gitcred', url: 'https://github.com/vipulthakre/testproject.git'
         }
       }
@@ -38,8 +37,8 @@ pipeline{
     stage('Upload to Jfrog'){
       steps{
         script{
-          def pipeline = load 'pipeline.groovy'
-          pipeline.uploadArtifactInJfrog()
+          def ufg = load 'pipeline.groovy'
+          ufg.uploadArtifactInJfrog()
         }
       }
     }
