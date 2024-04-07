@@ -8,3 +8,4 @@ def build(){
 def uploadArtfactInJfrog(){
   echo "Jfrog Stage"
 }
+return this
