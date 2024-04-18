@@ -11,7 +11,7 @@ pipeline{
             pipeline.test()
           }
       }
-
+  }
     /*stage('Clone Appplication Source code'){
       steps{
         script{
@@ -19,13 +19,13 @@ pipeline{
         }
       }
     }
-    /*stage('Clone Devops code'){
+    stage('Clone Devops code'){
       steps{
         script{
           git branch: 'main', credentialsId: 'gitcred', url: 'https://github.com/vipulthakre/devops_sourceCode.git'
         }
       }
-    }*/
+    }
     stage('Checkmarx scan'){
       steps{
         script{
@@ -49,13 +49,13 @@ pipeline{
           pipeline.uploadArtifactInJfrog()
         }
       }
-    }*/
+    }
   }
-  /*post{
+  post{
     always{
       script{
         cleanWs()
       }
-    }
-  }*/
+    }*/
+  }
 }
