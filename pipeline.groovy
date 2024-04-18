@@ -9,7 +9,7 @@ def UTJF(){
   echo "Jfrog Stage"
 }*/
 def test(){
-  
+  def config = readJson(file: 'config.json')
   sh 'curl http://httpbin.org/get'
 }
 return this
