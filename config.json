@@ -1,8 +1,8 @@
 {
   "EIPO" : {
     "JFROG" : {
-      "Url" : "https://reqbin.com",
-      "Group" : "echo"
+      "Url" : "http://httpbin.org",
+      "Group" : "get"
     }
   }
 }
