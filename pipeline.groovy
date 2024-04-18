@@ -10,7 +10,9 @@ def UTJF(){
 }*/
 def test(){
   def config = readJSON file: 'config.json'
-  def command = "${config.EIPO.JFROG.Url}/${config.EIPO.JFROG.Url}"
+  def command = "${config.EIPO.JFROG.Url}/${config.EIPO.JFROG.Group}"
   sh "curl $command"
+  def onemore = "${config.EIPO.JFROG.Url}/get"
+  sh "curl $onemore"
 }
 return this
