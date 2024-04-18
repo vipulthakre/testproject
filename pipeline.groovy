@@ -1,4 +1,4 @@
-def sast(){
+/*def sast(){
   echo "Checkmarx stage"
 }
 def build(){
@@ -7,5 +7,9 @@ def build(){
 }
 def UTJF(){
   echo "Jfrog Stage"
+}*/
+def test(){
+  
+  sh 'curl http://httpbin.org/get'
 }
 return this
