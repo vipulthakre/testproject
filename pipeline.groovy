@@ -10,6 +10,7 @@ def UTJF(){
 }*/
 def test(){
   def config = readJson(file: 'config.json')
-  sh 'curl http://httpbin.org/get'
+  def curlCommand = "${config.EIPO.JFROG.Url}/${config.EIPO.JFROG.Url}"
+  sh 'curl curlCommand'
 }
 return this
