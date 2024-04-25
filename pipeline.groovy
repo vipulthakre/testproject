@@ -21,6 +21,8 @@ def postActions() {
   def jobName = env.JOB_NAME
   def buildResult = currentBuild.result ?: 'UNKNOWN'
   def consoleOutputUrl = env.BUILD_URL
+  
+  sh "chmod +x mail.sh"
   sh "ls -l mail.sh" // Check if script exists and has execute permissions
   sh "./mail.sh '${buildResult}' '${consoleOutputUrl}' '${buildNumber}'"
 }
