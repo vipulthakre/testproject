@@ -62,5 +62,5 @@ EOF
      emailext -body "${htmlFilePath}" -mimeType "text/html" -subject "${subject}" -to "${recipient}"
 done
 
-#echo "Email sent successfully."
+echo "Email sent successfully."
 
