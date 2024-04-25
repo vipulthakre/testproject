@@ -2,6 +2,7 @@
 
 # Read recipients from JSON file
 recipients=$(grep -o '"MailList": "[^"]"' config.json | cut -d'"' -f4)
+echo "${recipients}"
 subject="Pipeline $1: Job $2 [$3]"
 
 # Define output values
