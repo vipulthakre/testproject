@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Read recipients from JSON file
-recipients=$(grep -o '"MailList": "[^"]"' config.json | cut -d'"' -f4)
+recipients=$(grep -o '"MailList": *"[^"]*"' config.json | cut -d'"' -f4)
 echo "${recipients}"
 subject="Pipeline $1: Job $2 [$3]"
 
@@ -55,8 +55,12 @@ cat <<EOF > "${htmlFilePath}"
 EOF
 
 # Send email with HTML content to each recipient
-for recipient in ${recipients}; do
-    mail -s "${subject}" "${recipient}" < "${htmlFilePath}"
+#for recipient in ${recipients}; do
+#    mail -s "${subject}" "${recipient}" < "${htmlFilePath}"
+#done
+ for recipient in ${recipients}; do
+     emailext -body "${htmlFilePath}" -mimeType "text/html" -subject "${subject}" -to "${recipient}"
 done
 
-echo "Email sent successfully."
+#echo "Email sent successfully."
+
