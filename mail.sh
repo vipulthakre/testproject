@@ -57,3 +57,5 @@ EOF
 for recipient in ${recipients}; do
     mutt -e 'set content_type=text/html' -s "${subject}" "${recipient}" < "${htmlFilePath}"
 done
+
+echo "Email sent successfully."
