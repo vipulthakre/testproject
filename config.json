@@ -3,6 +3,9 @@
     "JFROG" : {
       "Url" : "http://httpbin.org",
       "Group" : "get"
+    },
+    "MAIL" : {
+      "MailList" : "vipulthakre199@gmail.com"
     }
   }
 }
